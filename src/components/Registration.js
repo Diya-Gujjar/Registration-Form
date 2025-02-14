@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik"
 import '../App.css';
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import { registerSchema } from "../schemas";
 
 const initialValues = {
@@ -12,13 +12,13 @@ const initialValues = {
     confirmpswd: '',
 };
 
-const Registration = ( { setIsRegistered, setTableData } ) => {
+const Registration = ({ setIsRegistered, setTableData }) => {
     const navigate = useNavigate();
     const pswd = "123456";
     const { values, errors, touched, handleBlur, handleChange, handleSubmit, resetForm } = useFormik({
-        initialValues: initialValues, 
+        initialValues: initialValues,
         validationSchema: registerSchema, //validating
-        onSubmit: (values, action) => { 
+        onSubmit: (values, action) => {
             if (values.password === pswd) {
                 action.resetForm();
                 setTableData((tableData) => [...tableData, values]);
@@ -26,7 +26,8 @@ const Registration = ( { setIsRegistered, setTableData } ) => {
                 navigate("/Home"); // Navigate to the Home page on success
             } else {
                 alert("Passwords do not match!");
-            } },
+            }
+        },
     });
     // Clear the form fields
     const handleClear = () => {
@@ -38,7 +39,9 @@ const Registration = ( { setIsRegistered, setTableData } ) => {
             <form onSubmit={handleSubmit}>
                 <div className="container">
                     <div className="inputlbl">
-                        <div><label htmlFor="name">Name</label></div>
+                        <div className="lbl">
+                            <label htmlFor="name">Name</label>
+                        </div>
                         <div><input
                             id="name"
                             name="name"
@@ -52,7 +55,9 @@ const Registration = ( { setIsRegistered, setTableData } ) => {
                     </div>
 
                     <div className="inputlbl">
-                        <div><label htmlFor="email">Email Address</label></div>
+                        <div className="lbl">
+                            <label htmlFor="email">Email Address</label>
+                        </div>
                         <div><input
                             id="email"
                             name="email"
@@ -66,7 +71,9 @@ const Registration = ( { setIsRegistered, setTableData } ) => {
                     </div>
 
                     <div className="inputlbl">
-                        <div><label htmlFor="contactno">Contact No</label></div>
+                        <div className="lbl">
+                            <label htmlFor="contactno">Contact No</label>
+                        </div>
                         <div><input
                             id="contactno"
                             name="contactno"
@@ -80,7 +87,9 @@ const Registration = ( { setIsRegistered, setTableData } ) => {
                     </div>
 
                     <div className="inputlbl">
-                        <div><label htmlFor="password">Enter Password</label></div>
+                        <div className="lbl">
+                            <label htmlFor="password">Enter Password</label>
+                        </div>
                         <div><input
                             id="password"
                             name="password"
@@ -94,7 +103,9 @@ const Registration = ( { setIsRegistered, setTableData } ) => {
                     </div>
 
                     <div className="inputlbl">
-                        <div><label htmlFor="confirmpswd">Confirm Password</label></div>
+                        <div className="lbl">
+                            <label htmlFor="confirmpswd">Confirm Password</label>
+                        </div>
                         <div><input
                             id="confirmpswd"
                             name="confirmpswd"

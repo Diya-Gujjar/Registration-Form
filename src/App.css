@@ -1,4 +1,4 @@
-body { 
+body {
   background-color: #a3a2a2;
 }
 
@@ -18,8 +18,14 @@ h1 {
 
 .inputlbl {
   color: antiquewhite;
-  margin: 5px;
-  padding: 5px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 63px;
+}
+
+.lbl {
+  display: block;
 }
 
 input {
@@ -32,14 +38,19 @@ input {
   justify-content: center;
 }
 
-button{
+button {
   margin: 5px;
   padding: 5px 8px;
   border-radius: 4px;
 }
 
 .form-error {
+  padding-left: 10px;
   color: red;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 11px;
 }
 
 h2 {
@@ -59,7 +70,8 @@ th {
   background-color: #585555;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   text-align: center;
   border: 1px solid #595757;
